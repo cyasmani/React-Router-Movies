@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Route, Link} from 'react-router-dom'
+import MovieList from "./Movies/MovieList"
+import Movie from "./Movies/Movie"
 
 import SavedList from './Movies/SavedList';
 
@@ -25,10 +28,15 @@ const App = () => {
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
+ 
+
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-      <div>Replace this Div with your Routes</div>
+      <Route exact path="/" component={MovieList} >
+        <MovieList movies={movieList}/>
+      </Route>
+      <Route path="/Movie" component={Movie}/>
     </div>
   );
 };

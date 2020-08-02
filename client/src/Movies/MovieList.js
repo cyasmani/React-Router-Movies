@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import Movie from "./Movie";
 
 const MovieList = props => {
+
+  
   return (
     <div className="movie-list">
       {props.movies.map(movie => (

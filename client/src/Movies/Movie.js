@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import MovieList from './MovieList';
 
 const Movie = (props) => {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState([]);
  
   useEffect(() => {
     const id = 1;
@@ -23,6 +24,8 @@ const Movie = (props) => {
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => {
   // }
+
+  console.log(setMovie)
 
   if (!movie) {
     return <div>Loading movie information...</div>;
