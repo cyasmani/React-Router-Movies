@@ -1,13 +1,20 @@
 import React, {useEffect} from 'react';
 import Movie from "./Movie";
+import {Link} from "react-router-dom"
 
-const MovieList = props => {
+const MovieList = (props, clickHandler) => {
+
+  
+
+  
 
   
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
-        <MovieDetails key={movie.id} movie={movie} />
+        <Link to={`/movies/${movie.id}` }>
+          <MovieDetails key={movie.id} movie={movie} onClick={clickHandler}  />
+        </Link>
       ))}
     </div>
   );
